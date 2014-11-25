@@ -1,0 +1,35 @@
+<script type="text/javascript">
+ 
+var object = [
+ 
+{
+ 
+'headline':'Skill 1',
+'value':8,
+'length':9,
+'description':'Details 1'
+ 
+},
+{
+ 
+'headline':'Skill 2',
+'value':4,
+'length':5,
+'description':'Details 2'
+ 
+}
+ 
+];
+ 
+$(document).ready(function(){
+ 
+$("#skillset").skillset({
+ 
+object:object,
+duration:80
+ 
+});
+ 
+});
+ 
+</script>
