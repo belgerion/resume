@@ -15,7 +15,7 @@ var bio = {
 		"Video Editing",
 		"Technical Writing"
 	],
-	"bioPic" : "images/jedi_mickey.jpeg"
+	"bioPic" : "profile_pic.jpeg"
 };
 
 var education = {
