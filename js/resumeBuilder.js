@@ -15,7 +15,7 @@ var bio = {
 		"Video Editing",
 		"Technical Writing"
 	],
-	"bioPic" : "profile_pic.jpg"
+	"bioPic" : "profile_pic.jpeg"
 };
 
 var education = {
