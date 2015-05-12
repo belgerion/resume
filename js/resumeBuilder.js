@@ -1,17 +1,18 @@
 var bio = {
 	"name" : "Jeffrey Barnes",
-	"role" : "Web Developer", 
+	"role" : "Web Developer",
 	"welcomeMessage" : "Greetings, and welcome to my interactive resume. Don't mind the dust, I am still building in here.",
 	"contacts" : {
-		"email" : "jeffrey_w_barnes@hotmail.com", 
-		"mobile" : "406-560-1633", 
-		"github" : "Belgerion", 
+		"email" : "jeffrey_w_barnes@hotmail.com",
+		"mobile" : "406-560-1633",
+		"github" : "https://github.com/belgerion",
+		"linkedin" : "https://www.linkedin.com/pub/jeffrey-barnes/3b/90a/bba",
 		"location" : "Anaconda, MT"
 	},
 	"skills" : [
-		"HTML", 
-		"CSS", 
-		"Javascript", 
+		"HTML",
+		"CSS",
+		"Javascript",
 		"Video Editing",
 		"Technical Writing"
 	],
@@ -19,7 +20,7 @@ var bio = {
 };
 
 var education = {
-	"schools" : [ 
+	"schools" : [
 	{
 		"name" : "Montana Tech",
 		"location" : "Butte, MT, US",
@@ -33,7 +34,7 @@ var education = {
 		"location" : "Butte, MT, US",
 		"degree" : "Masters of Science",
 		"major" : "Technical Communication",
-		"dates" : "Incomplete August 2009 - July 2012",
+		"dates" : "Incomplete August 2009 - June 2012",
 		"url" : "http://www.mtech.edu"
 	},
 	{
@@ -41,24 +42,16 @@ var education = {
 		"location" : "Anaconda, MT, US",
 		"degree" : "Nano-Degree",
 		"major" : ["Front-End Web Developer"],
-		"dates" : "In Progress",
+		"dates" : "October 2014 - May 2015",
 		"url" : "http://www.udacity.com"
 	}],
 	"onlineCourse": [
 		{
-			"title" : "Intro to HTML and CSS",
-			"school" : "Udacity",
-			"dates" : "Oct - Nov 2014",
-			"urls" : "http://www.udacity.com"
+			"title" : "JavaScript",
+			"school" : "CodeAcademy",
+			"dates" : "February 2015",
+			"url" : "http://www.codecademy.com/en/tracks/javascript"
 		},
-
-		{
-			"title" : "JaveScript Basics",
-			"school" : "Udacity",
-			"dates" : "Nov - Dec 2014",
-			"urls" : "http://www.udacity.com"
-		}
-
 	]
 };
 
@@ -66,7 +59,8 @@ var work = {
 	"jobs" : [
 	{
 		"title" : "Day Care Provider",
-		"employer" : "Self-Employeed", 
+		"employer" : "Self-Employeed",
+		"url" : "http://belgerion.github.io/portfolio/",
 		"dates" : "November 2013 - Current",
 		"location" : "Anaconda, MT",
 		"description" : "Ran a daycare out of my home for children aged 0-12 years of age."
@@ -74,6 +68,7 @@ var work = {
 	{
 		"title" : "Treatment Service Technician",
 		"employer" : "BSW Inc.",
+		"url" : "http://www.bswinc.org/",
 		"dates" : "August 2012 - November 2013, August 2008 - August 2009",
 		"location" : "Anaconda, MT",
 		"description" : "Work with individuals with developemental disabilities, providing assistance with daily activities."
@@ -81,6 +76,7 @@ var work = {
 	{
 		"title" : "Team Leader",
 		"employer" : "Montana Tech AmeriCorps",
+		"url" : "http://institute.mtech.edu/americorps/",
 		"dates" : "August 2007 - July 2008",
 		"location" : "Butte, MT",
 		"description" : "Recruit and train volunteers to work in community improvement projects out of the Montana Tech campus."
@@ -91,16 +87,25 @@ var work = {
 var projects = {
 	"projects" : [
 	{
-		"title" : "Interactive Resume",
-		"dates" : "November 2014",
-		"description" : "My Interactive Resume for the Javascript class and Nano-Degree",
-		"images" : ["images/reef.jpg"]
+		"title" : "Interactive Tourist Map",
+		"url" : "http://belgerion.github.io/map/",
+		"dates" : "March 2015",
+		"description" : "Interactive map using Google Maps API and Flickr API",
+		"images" : ["images/tourist_map.jpg"]
 	},
 	{
-		"title" : "Website Mockup",
-		"dates" : "October 2014",
-		"description" : "Mockup of a website for the Nano-Degree",
-		"images" : ["images/trident.png"]
+		"title" : "Frogger Clone",
+		"url" : "http://belgerion.github.io/frogger/",
+		"dates" : "February 2015",
+		"description" : "Frogger Clone made in JavaScript",
+		"images" : ["images/java_game.jpg"]
+	},
+	{
+		"title" : "My Portfolio",
+		"url" : "http://belgerion.github.io/portfolio/",
+		"dates" : "November 2014",
+		"description" : "My current portfolio",
+		"images" : ["images/code_wallpaper.jpg"]
 	}
 	]
 };
@@ -122,6 +127,9 @@ function displayBio (){
 	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
 	$("#topContacts").append(formattedEmail);
 	$("#footerContacts").append(formattedEmail);
+	var formattedLinkedIn = HTMLlinkedin.replace("%data%", bio.contacts.linkedin);
+	$("#topContacts").append(formattedLinkedIn);
+	$("#footerContacts").append(formattedLinkedIn);
 	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
 	$("#topContacts").append(formattedGithub);
 	$("#footerContacts").append(formattedGithub);
@@ -140,7 +148,7 @@ function displayWork() {
 	for (job in work.jobs) {
 
 		$("#workExperience").append(HTMLworkStart);
-		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer); formattedEmployer = formattedEmployer.replace("%url%", work.jobs[job].url);
 		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
 		var formattedEmployerTitle = formattedEmployer + formattedTitle;
 		$(".work-entry:last").append(formattedEmployerTitle);
@@ -159,7 +167,7 @@ function displayProjects() {
 
 		$("#projects").append(HTMLprojectStart);
 
-		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title); formattedTitle = formattedTitle.replace("%url%", projects.projects[project].url);
 		$(".project-entry:last").append(formattedTitle);
 
 		var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
@@ -184,7 +192,7 @@ function displayEducation() {
 
 		$("#education").append(HTMLschoolStart);
 
-		var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+		var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name); formattedSchoolName = formattedSchoolName.replace("%url%", education.schools[school].url);
 		var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
 		var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
 		var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
@@ -200,28 +208,28 @@ function displayEducation() {
 
 displayEducation();
 
-function displayOnline() { 
+function displayOnline() {
 
   $(".education-entry:last").append(HTMLonlineClasses);
-  
+
   for (course in education.onlineCourse) {
 
-	  var formattedonlineTitle =  HTMLonlineTitle.replace("%data%", education.onlineCourse[course].title);
+	  var formattedonlineTitle =  HTMLonlineTitle.replace("%data%", education.onlineCourse[course].title); formattedonlineTitle =  formattedonlineTitle.replace("%url%", education.onlineCourse[course].url);
 	  var formattedonlineDates =  HTMLonlineDates.replace("%data%", education.onlineCourse[course].dates);
 	  var formattedonlineSchool =  HTMLonlineSchool.replace("%data%", education.onlineCourse[course].school);
-	  var formattedonlineUrl =  HTMLonlineURL.replace("%data%", education.onlineCourse[course].urls);
+	  var formattedonlineUrl =  HTMLonlineURL.replace("%data%", education.onlineCourse[course].url); formattedonlineUrl =  formattedonlineUrl.replace("%url%", education.onlineCourse[course].url);
 
 	  $(".education-entry:last").append(formattedonlineTitle  + formattedonlineSchool);
 	  $(".education-entry:last").append(formattedonlineDates);
 	  $(".education-entry:last").append(formattedonlineUrl);
 
 
-  }	
-			 
+  }
+
 }
 displayOnline();
 
-$(document).click(function(loc) { 
+$(document).click(function(loc) {
 	var x = loc.pageX;
 	var y = loc.pageY;
 
@@ -249,12 +257,5 @@ function inName(name) {
 
 $("#main").append(internationalizeButton);
 
-$("#mapDiv").append(googleMap);
 
 
-$(document).ready(function(){
-$('.chart').horizBarChart({
-  selector: '.bar',
-  speed: 3000
-});
-});
