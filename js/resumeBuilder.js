@@ -1,7 +1,7 @@
 var bio = {
 	"name" : "Jeffrey Barnes",
 	"role" : "Web Developer",
-	"welcomeMessage" : "Greetings, and welcome to my interactive resume. Don't mind the dust, I am still building in here.",
+	"welcomeMessage" : "Welcome to my resume. Currently this includes my work from the Front-End Developer Nano-Degree.",
 	"contacts" : {
 		"email" : "jeffrey_w_barnes@hotmail.com",
 		"mobile" : "406-560-1633",
@@ -106,8 +106,14 @@ var projects = {
 		"dates" : "November 2014",
 		"description" : "My current portfolio",
 		"images" : ["images/code_wallpaper.jpg"]
-	}
-	]
+	},
+	{
+		"title" : "Additional projects",
+		"url" : "mailto:jeffrey_w_barnes@hotmail.com",
+		"dates" : "jeffrey_w_barnes@hotmail.com",
+		"description" : "Additional video projects are available upon request, but are not hosted, due to copyright",
+		"images" : ["images/code_wallpaper.jpg"]
+	}	]
 };
 
 function displayBio (){
