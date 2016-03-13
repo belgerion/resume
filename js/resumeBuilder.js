@@ -1,7 +1,7 @@
 var bio = {
 	"name" : "Jeffrey Barnes",
 	"role" : "Web Developer",
-	"welcomeMessage" : "Welcome to my resume. Currently this includes my work from the Front-End Developer Nano-Degree.",
+	"welcomeMessage" : "Welcome to my resume. This covers the work from my nano-degree from Udacity, my on-going education with FreeCodeCamp, and my work as a freelance developer.",
 	"contacts" : {
 		"email" : "jeffrey_w_barnes@hotmail.com",
 		"mobile" : "406-560-1633",
@@ -39,17 +39,37 @@ var education = {
 	},
 	{
 		"name" : "Udacity",
-		"location" : "Anaconda, MT, US",
+		"location" : "Online",
 		"degree" : "Nano-Degree",
 		"major" : ["Front-End Web Developer"],
 		"dates" : "October 2014 - May 2015",
 		"url" : "http://www.udacity.com"
+	},
+	{
+		"name" : "FreeCodeCamp",
+		"location" : "Online",
+		"degree" : "Certification",
+		"major" : ["Full Stack Web Developer"],
+		"dates" : "October 2015 - Present",
+		"url" : "http://www.FreeCodeCamp.com"
 	}],
 	"onlineCourse": [
 		{
-			"title" : "JavaScript",
+			"title" : "JavaScript, ",
 			"school" : "CodeAcademy",
 			"dates" : "February 2015",
+			"url" : "http://www.codecademy.com/en/tracks/javascript"
+		},
+		{
+			"title" : "jQuery",
+			"school" : "CodeAcademy",
+			"dates" : "February 2015",
+			"url" : "http://www.codecademy.com/en/tracks/javascript"
+		},
+		{
+			"title" : "PHP",
+			"school" : "CodeAcademy",
+			"dates" : "February 2016",
 			"url" : "http://www.codecademy.com/en/tracks/javascript"
 		},
 	]
@@ -57,6 +77,14 @@ var education = {
 
 var work = {
 	"jobs" : [
+	{
+		"title" : "Freelance Web Developer",
+		"employer" : "Self-Employeed",
+		"url" : "http://belgerion.github.io/portfolio/",
+		"dates" : "May 2015 - Current",
+		"location" : "Anaconda, MT",
+		"description" : "Design and Develop websites using various tools and skills"
+	},
 	{
 		"title" : "Day Care Provider",
 		"employer" : "Self-Employeed",
@@ -86,6 +114,13 @@ var work = {
 
 var projects = {
 	"projects" : [
+	{
+		"title" : "Spokes Unlimited Website Redesign",
+		"url" : "http://www.spokesunlimited.org",
+		"dates" : "February 2016",
+		"description" : "A redesigned website for the non-profit Spokes Unlimited, using HTML/CSS and JavaScript, converted to a Joomla template/website.",
+		"images" : ["images/spokes_ss.png"]
+	},
 	{
 		"title" : "Interactive Tourist Map",
 		"url" : "http://belgerion.github.io/map/",
